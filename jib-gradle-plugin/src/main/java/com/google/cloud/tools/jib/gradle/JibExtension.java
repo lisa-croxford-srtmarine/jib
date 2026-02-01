@@ -104,7 +104,7 @@ public class JibExtension {
   /**
    * Should be called using {@link org.gradle.api.plugins.ExtensionContainer#create}.
    *
-   * @param project the injected gradle project
+   * @param objectFactory the injected objectFactory
    */
   @Inject
   public JibExtension(ObjectFactory objectFactory) {
