@@ -30,11 +30,9 @@ public class SkaffoldParameters {
   private final SkaffoldSyncParameters sync;
 
   @Inject
-  public SkaffoldParameters(Project project) {
-    ObjectFactory objectFactory = project.getObjects();
-
-    watch = objectFactory.newInstance(SkaffoldWatchParameters.class, project);
-    sync = objectFactory.newInstance(SkaffoldSyncParameters.class, project);
+  public SkaffoldParameters(ObjectFactory objectFactory) {
+    watch = objectFactory.newInstance(SkaffoldWatchParameters.class);
+    sync = objectFactory.newInstance(SkaffoldSyncParameters.class);
 
     Preconditions.checkNotNull(watch);
   }

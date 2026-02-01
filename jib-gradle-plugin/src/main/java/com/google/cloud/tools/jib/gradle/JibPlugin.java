@@ -91,8 +91,8 @@ public class JibPlugin implements Plugin<Project> {
     checkGradleVersion();
     checkJibVersion();
 
-    JibExtension jibExtension =
-        project.getExtensions().create(JIB_EXTENSION_NAME, JibExtension.class, project);
+    JibExtension jibExtension = project.getObjects().newInstance(JibExtension.class);
+        project.getExtensions().add(JIB_EXTENSION_NAME, jibExtension);
 
     TaskContainer tasks = project.getTasks();
     TaskProvider<BuildImageTask> buildImageTask =
